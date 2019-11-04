@@ -109,7 +109,7 @@ endfunction
 cabbr mf global/require/normal " run macro on whole file
 
 " global replace the word under cursor
-" nnoremap gr *:%s//<C-r><C-w>/g<left><left>
+nnoremap <leader>h *:%s//<C-r><C-w>/g<left><left>
 " Better movement with { }
 nnoremap } }w
 nnoremap <expr><silent> { (col('.')==1 && len(getline(line('.')-1))==0? '2{j' : '{j')

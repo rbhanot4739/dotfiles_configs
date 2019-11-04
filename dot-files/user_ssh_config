@@ -1,0 +1,11 @@
+# 1mg Github account keys
+Host github.com
+	HostName github.com
+	User git
+  IdentityFile ~/.ssh/id_rsa_work
+
+# Personal Github account key
+Host github.com-personal
+	HostName github.com
+	User git
+  IdentityFile ~/.ssh/id_rsa

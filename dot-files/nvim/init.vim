@@ -72,35 +72,35 @@ let g:python3_host_prog = '/usr/bin/python3'
 "Plugins ----------------------------------------------- {{{
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.config/nvim/plugged')
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
-Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-Plug 'ncm2/ncm2-cssomni'
-Plug 'ncm2/ncm2-ultisnips'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-html-subscope'
-Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
-" Plug 'davidhalter/jedi-vim' , {'on_ft': 'python'}
-" Plug 'w0rp/ale'
+"Plug 'ncm2/ncm2'
+"Plug 'roxma/nvim-yarp'
+"Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
+"Plug 'ncm2/ncm2-jedi'
+"Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
+"Plug 'ncm2/ncm2-cssomni'
+"Plug 'ncm2/ncm2-ultisnips'
+"Plug 'ncm2/ncm2-path'
+"Plug 'ncm2/ncm2-html-subscope'
+"Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
+"Plug 'davidhalter/jedi-vim' , {'on_ft': 'python'}
+"Plug 'w0rp/ale'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'ap/vim-css-color'
-Plug 'mgedmin/python-imports.vim'
-Plug 'mattn/emmet-vim'
+"Plug 'mgedmin/python-imports.vim'
+"Plug 'mattn/emmet-vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
+"Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-surround'
-Plug 'Raimondi/delimitMate'
+"Plug 'Raimondi/delimitMate'
 " Plug 'tpope/vim-repeat'
 Plug 'sheerun/vim-polyglot'
 
 " Navigation
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 " Plug 'ludovicchabant/vim-gutentags'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -111,7 +111,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jpo/vim-railscasts-theme'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
@@ -128,15 +128,15 @@ let g:LanguageClient_serverCommands = {
 
 " NCM2 ---------------------------------------------------------{{{
 " enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+" autocmd BufEnter * call ncm2#enable_for_buffer()
 
 " IMPORTANT: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
 " make it fast
-let ncm2#popup_delay = 5
-let ncm2#complete_length = [[1, 1]]
+" let ncm2#popup_delay = 5
+" let ncm2#complete_length = [[1, 1]]
 " Use new fuzzy based matches
-let g:ncm2#matcher = 'substrfuzzy'
+" let g:ncm2#matcher = 'substrfuzzy'
 " }}}
 
 " Jedi ------------------------------------------------------{{{

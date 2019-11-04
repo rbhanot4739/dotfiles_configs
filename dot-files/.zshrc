@@ -22,9 +22,9 @@ setopt +o nomatch
 autoload -U promptinit && promptinit
 
 # User configuration
-host_name=`hostname`
+ORG_NAME='1mg'
 
-if grep -q '1mg' <<< `hostname -f`
+if grep -q $ORG_NAME <<< `hostname -f`
 then
 	source ~/.zshrc_work
 else
@@ -40,15 +40,9 @@ alias c='clear'
 alias h='history'
 alias r='source ~/.zshrc'
 
-alias ls='ls -F --color --hide="*.pyc"'
-alias lsa='ls -a'
-alias ll='ls -ltrh --color '
-alias lla='ll -a '
-alias lh='ls -d .?*'
-alias llh='ls -ld .?*'
 alias grep='grep -E --color=auto '
 alias df='df -hPT'
-alias cp='cp -arv'
+alias cp='cp -av'
 alias py='python '
 alias dmux='bash ~/dev-tmux'
 

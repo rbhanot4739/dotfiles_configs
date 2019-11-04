@@ -4,6 +4,7 @@ MYPC="1mglptp544.local"
 # Local machine settings
 if [ ${LOCALHOST} = $MYPC ]
 then
+	PATH=$PATH:/Users/rohit/Library/Python/3.7/bin
 
 	 [ -f ~/.local_settings_rc ] && source ~/.local_settings_rc
 
