@@ -22,9 +22,9 @@ setopt +o nomatch
 autoload -U promptinit && promptinit
 
 # User configuration
-ORG_NAME='1mg'
+ORG_NAME='1MG'
 
-if grep -q $ORG_NAME <<< `hostname -f`
+if grep -iq $ORG_NAME <<< `hostname -f`
 then
 	source ~/.zshrc_work
 else

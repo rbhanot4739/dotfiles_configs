@@ -1,4 +1,4 @@
-<keymap version="1" name="MyVSCode" parent="VSCode">
+<keymap version="1" name="Custom" parent="VSCode">
   <action id="ActivateFavoritesToolWindow" />
   <action id="ActivateProjectToolWindow">
     <keyboard-shortcut first-keystroke="alt 1" />

@@ -1,14 +1,10 @@
 IdeaVIM
+.ignore
 Key Promoter X
-com.intellij.plugins.vscodekeymap
-com.jetbrains.plugins.ini4idea
+VSCode key map
+ini plugin
 com.mallowigi
-com.mnw.tabmover
-io.github.qeesung.component.HighlightBracketPair
-mobi.hsz.idea.gitignore
-net.vektah.codeglance
-org.jetbrains.plugins.go
-Pythonid
-org.toml.lang
-zielu.gittoolbox
-color.scheme.Dark Blue Theme
+HighlightBracketPair
+Gitttolbox
+Rainbow brackets
+Atom material icons

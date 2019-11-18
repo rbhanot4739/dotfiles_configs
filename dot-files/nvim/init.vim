@@ -154,14 +154,14 @@ set completeopt=noinsert,menuone,noselect
 
 " Ultisnip----------------------------------------------- {{{
 " Press enter key to trigger snippet expansion
-imap <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
+" imap <expr> <CR> ncm2_ultisnips#expand_or("\<CR>", 'n')
 " inoremap <silent> <expr> <CR> ((pumvisible() && empty(v:completed_item)) ?  "\<c-y>\<cr>" : (!empty(v:completed_item) ? ncm2_ultisnips#expand_or("", 'n') : "\<CR>" ))
 
 " smap <c-u> <Plug>(ultisnips_expand)
-let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
-let g:UltiSnipsJumpForwardTrigger="<a-j>"
-let g:UltiSnipsJumpBackwardTrigger="<a-k>"
-let g:UltiSnipsRemoveSelectModeMappings = 0
+" let g:UltiSnipsExpandTrigger		= "<Plug>(ultisnips_expand)"
+" let g:UltiSnipsJumpForwardTrigger="<a-j>"
+" let g:UltiSnipsJumpBackwardTrigger="<a-k>"
+" let g:UltiSnipsRemoveSelectModeMappings = 0
 " }}}
 " }}}
 
