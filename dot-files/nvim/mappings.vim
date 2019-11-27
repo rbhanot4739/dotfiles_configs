@@ -88,17 +88,6 @@ cabbr ht Helptags
 cabbr h: History:
 " Toggle Paste Mode
 set pastetoggle=<F2>
-if has("nvim")
-" NeoVim specific mappings
-" tnoremap <Esc> <C-\><C-n>   "tnoremap stands for terminal mode mappings in neovim"
-" tnoremap <c-h> <C-\><C-N><C-w>h
-" tnoremap <c-j> <C-\><C-N><C-w>j
-" tnoremap <c-k> <C-\><C-N><C-w>k
-" tnoremap <c-j> <C-\><C-N><C-w>j
-endif
-
-" Generate ctags for python
-" map <F8> :!ctags -R -f ./tags `python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())"`<CR>
 
 " run macro on visual selection with @
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
@@ -113,50 +102,42 @@ nnoremap <leader>h *:%s//<C-r><C-w>/g<left><left>
 " Better movement with { }
 nnoremap } }w
 nnoremap <expr><silent> { (col('.')==1 && len(getline(line('.')-1))==0? '2{j' : '{j')
+
+" save files as root
+cnoremap w!! w !sudo tee > /dev/null %
 " }}}
 
 " Plugin Mappings ------------------------------------{{{
 " nnoremap ,, :ALEFix<CR>
 
-"LanguageClient Mappings -----------------------------{{{
-
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-nnoremap <silent> gh :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> gr :call LanguageClient#textDocument_rename()<CR>
-nnoremap <silent> ,, :call LanguageClient#textDocument_formatting()<CR>
-nnoremap <silent> gu :call LanguageClient#textDocument_documentHighlight()<CR>
-
-"}}}
-
 " NERDTree mappings ----------------------------------{{{
-nnoremap <F3> :NERDTreeToggle<CR>
-inoremap <F3> :NERDTreeToggle<CR>
-let g:NERDTreeMapActivateNode = '<tab>'
+" nnoremap <F3> :NERDTreeToggle<CR>
+" inoremap <F3> :NERDTreeToggle<CR>
+" let g:NERDTreeMapActivateNode = '<tab>'
 " let g:NERDTreeMapOpenInTab = '<c-t>'
 " let g:NERDTreeMapOpenInTabSilent = '<c-s-t>'
 " let g:NERDTreeMapOpenVSplit = '<c-v>'
 " let g:NERDTreeMapOpenSplit = '<c-x>'
-let g:NERDTreeMapOpenInTab = '<a-t>'
-let g:NERDTreeMapOpenSplit = '<a-->'
-let g:NERDTreeMapOpenVSplit = '<a-\>'
+" let g:NERDTreeMapOpenInTab = '<a-t>'
+" let g:NERDTreeMapOpenSplit = '<a-->'
+" let g:NERDTreeMapOpenVSplit = '<a-\>'
 
 " }}}
 
 " Tagbar mappings ----------------------------------{{{
-nnoremap <F7> :TagbarToggle<CR>
-let g:tagbar_map_togglefold = "<tab>"
+" nnoremap <F7> :TagbarToggle<CR>
+" let g:tagbar_map_togglefold = "<tab>"
 " }}}
 
 " FZF mappings ----------------------------------{{{
-nnoremap <leader>ff :Files<CR>
-nnoremap <leader>fh :History<CR>
-nnoremap <leader>fg :Rg<CR>
-nnoremap <c-p> :Tags<CR>
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
+" nnoremap <leader>ff :Files<CR>
+" nnoremap <leader>fh :History<CR>
+" nnoremap <leader>fg :Rg<CR>
+" nnoremap <c-p> :Tags<CR>
+" let g:fzf_action = {
+  " \ 'ctrl-t': 'tab split',
+  " \ 'ctrl-s': 'split',
+  " \ 'ctrl-v': 'vsplit' }
 " }}}
 
 " }}}

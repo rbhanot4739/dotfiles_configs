@@ -16,27 +16,6 @@ autocmd BufReadPost *
 \ |   exe "normal! g`\""
 \ | endif
 
-" " Indent folding with manual folds
-" augroup ManualFolds
-" 	autocmd!
-" 	au BufReadPre * setlocal foldmethod=indent
-" 	au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-" augroup END
-
-" Save and load folds
-" augroup AutoSaveFolds
-" 	autocmd!
-" 	autocmd BufWinLeave *.* mkview
-" 	autocmd BufWinEnter *.* silent! loadview
-" augroup END
-
-" augroup NerdTree
-" 	autocmd!
-" 	" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" 	autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif" Close Vim if the only window left open is NERDTree
-" augroup END
-
 " center buffer around cursor when opening files
 autocmd BufEnter * normal zz
 

@@ -45,7 +45,6 @@ cd $CWD
 	python
 	zsh-syntax-highlighting
 	zsh-autosuggestions
-	#zsh-dircolors-solarized
 	zsh-completions
 	history-substring-search
 	)
@@ -58,11 +57,11 @@ cd $CWD
 	bindkey '^[[A' history-substring-search-up
 	bindkey '^[[B' history-substring-search-down
 	bindkey '^R' fzf-history-widget
-# fi
 
 
 alias vim="nvim"
 alias vi="/usr/bin/vim"
+export EDITOR=nvim
 
 # git aliases
 alias gs='git status'
@@ -108,10 +107,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 alias vf='vim $(fzf)'
 
-#source $(which virtualenvwrapper.sh)
-# Add every binary that requires nvm, npm or node to run to an array of node globals
-#	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-#VIRTUALENVWRAPPER_PYTHON=/usr/bin/python

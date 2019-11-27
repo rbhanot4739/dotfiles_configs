@@ -32,7 +32,7 @@ then
 
 	echo -e "\n${YELLOW}..................... Installing packages .....................${NC}\n"
 
-	INSTALL_PACKAGES="build-essential python3-setuptools python3-wheel python3-pip make libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl libssl1.0-dev libedit2 libpq5 libssl1.0.0 postgresql-client-common postgresql-common tmux gnome-tweaks curl git zsh "
+	INSTALL_PACKAGES="build-essential python3-setuptools python3-wheel python3-pip make libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev libpq-dev python-dev python3-dev libxml2 libxml2-dev libxslt1-dev zlib1g-dev python-openssl libssl1.0-dev libedit2 libpq5 libssl1.0.0 postgresql-client-common postgresql-common tmux gnome-tweaks curl git zsh "
 
 for pkg in $INSTALL_PACKAGES
 do
@@ -94,6 +94,8 @@ do
 	done
 	cp -av ~/dotfiles_configs/dot-files/nvim ~/.config/
 	cp -av ~/dotfiles_configs/dot-files/tmux/ ~/.tmux/
+	cp ~/dotfiles_configs/dotfiles/user_ssh_config ~/.ssh/config
+	cd ~/dotfiles_configs && git remote remove origin && git remote add origin git@github.com-personal:rbhanot4739/dotfiles_configs.git
 	cd ~/
 
 
@@ -101,17 +103,23 @@ do
 	
 	nvim +'PlugInstall --sync' +qall
 	nvim +'UpdateRemotePlugins' +qall
-	python3 -m pip install neovim
 
 	echo -e "\n${YELLOW}.....................  Setting up pyenv .....................${NC}\n"
 	curl https://pyenv.run | bash
+	export PYENV_ROOT="$HOME/.pyenv"
+	export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init -)"
 	pyenv install 3.4.3
+	pyenv global 3.4.3
+	python3 -m pip install neovim
 
 	echo -e "\n${YELLOW}..................... Installing Postgresql9.5 .....................${NC}\n"
 	cd /tmp
 	wget http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-client-9.5_9.5.19-0ubuntu0.16.04.1_amd64.deb
 	wget http://security.ubuntu.com/ubuntu/pool/main/p/postgresql-9.5/postgresql-9.5_9.5.19-0ubuntu0.16.04.1_amd64.deb
 	sudo dpkg -i postgresql-client-9.5_9.5.19-0ubuntu0.16.04.1_amd64.deb postgresql-9.5_9.5.19-0ubuntu0.16.04.1_amd64.deb
+	wget http://security.ubuntu.com/ubuntu/pool/universe/p/postgresql-9.5/postgresql-server-dev-9.5_9.5.19-0ubuntu0.16.04.1_amd64.deb
+	sudo dpkg -i postgresql-server-dev-9.5_9.5.19-0ubuntu0.16.04.1_amd64.deb
 	rm *.deb			
 	
 	echo -e "\n${YELLOW}..................... Installing Redis2.8 .....................${NC}\n"
@@ -121,10 +129,10 @@ do
 	make
 	rm redis-2.8.24.tar.gz
 
-
 	echo $password |sudo -S snap install -y pycharm-community --classic
 	echo $password |sudo -S snap install -y code --classic 
 	echo $password |sudo -S snap install -y flock-chat
+	echo $password |sudo -S snap install -y postman
 
 else
 	echo -e "Different OS, exitting !!"
